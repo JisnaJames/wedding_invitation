@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Wedding Invitation</title>
+
+<style>
+:root {
+  --sage: #788b72;
+  --dark-green: #354b3b;
+  --light-green: #e7eee3;
+  --ivory: #fffdf6;
+  --gold: #b39a65;
+  --text: #455348;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  text-align: center;
+  color: var(--text);
+  background: var(--ivory);
+  line-height: 1.7;
+}
+
+header {
+  padding: 65px 20px 55px;
+  background:
+    radial-gradient(ellipse at top, #f7f7e9, transparent 70%),
+    linear-gradient(145deg, #e5eddf, #fffdf6);
+  border-bottom: 4px solid var(--sage);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 12px;
+  color: var(--sage);
+}
+
+.cross {
+  color: var(--sage);
+  font-size: 34px;
+  margin-bottom: 8px;
+}
+
+h1 {
+  color: var(--dark-green);
+  font-size: clamp(34px, 7vw, 64px);
+  line-height: 1.2;
+  margin: 20px 0;
+  font-weight: normal;
+}
+
+h2 {
+  color: var(--dark-green);
+  font-weight: normal;
+  font-size: 30px;
+}
+
+h3 {
+  color: var(--sage);
+}
+
+.subtitle {
+  letter-spacing: 1px;
+}
+
+.verse {
+  max-width: 480px;
+  margin: 25px auto;
+  font-style: italic;
+  color: #61705d;
+}
+
+section {
+  padding: 45px 18px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.section-label {
+  color: var(--gold);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+.card {
+  background: white;
+  padding: 26px;
+  margin: 20px auto;
+  border: 1px solid #e0e7da;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(53, 75, 59, 0.07);
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 25px auto;
+}
+
+.count-box {
+  background: white;
+  border: 1px solid #d5dfce;
+  border-radius: 12px;
+  padding: 12px;
+  min-width: 72px;
+}
+
+.count-number {
+  display: block;
+  color: var(--dark-green);
+  font-size: 26px;
+}
+
+.count-label {
+  color: var(--sage);
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+button, .button {
+  display: inline-block;
+  padding: 12px 22px;
+  margin: 7px;
+  background: var(--sage);
+  color: white;
+  border: 1px solid var(--sage);
+  border-radius: 28px;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+button:hover, .button:hover {
+  background: var(--dark-green);
+  border-color: var(--dark-green);
+}
+
+.secondary {
+  background: transparent;
+  color: var(--dark-green);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.gallery img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 12px;
+  background: var(--light-green);
+}
+
+.venue-icon {
+  font-size: 45px;
+}
+
+#venueQR {
+  display: block;
+  width: 180px;
+  height: 180px;
+  margin: 20px auto;
+  border: 8px solid white;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 13px;
+  margin: 8px 0;
+  border: 1px solid #d5dfce;
+  border-radius: 9px;
+  background: #fffefa;
+  color: var(--text);
+  font: inherit;
+}
+
+textarea {
+  min-height: 90px;
+}
+
+form {
+  max-width: 450px;
+  margin: auto;
+}
+
+.divider {
+  color: var(--gold);
+  letter-spacing: 10px;
+  margin: 18px;
+}
+
+footer {
+  background: var(--dark-green);
+  color: #f8f7ed;
+  padding: 35px 20px;
+}
+
+footer p {
+  margin: 8px;
+}
+
+.small-note {
+  font-size: 12px;
+  color: #7b8878;
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 32px 15px;
+  }
+
+  .card {
+    padding: 19px;
+  }
+
+  .countdown {
+    gap: 7px;
+  }
+
+  .count-box {
+    min-width: 65px;
+    padding: 9px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="cross">✝</div>
+  <p class="eyebrow">Together with God's blessings</p>
+
+  <!-- EDIT YOUR NAMES IN THE JAVASCRIPT BELOW -->
+  <h1 id="coupleNames">Bride Name & Groom Name</h1>
+
+  <div class="divider">❧ ❦ ❧</div>
+
+  <p class="subtitle">
+    Joyfully invite you to celebrate<br>
+    the beginning of our forever.
+  </p>
+
+  <p class="verse">
+    "Therefore what God has joined together,
+    let no one separate."
+    <br>— Matthew 19:6
+  </p>
+
+  <h2 id="weddingDateText">Our Wedding Day</h2>
+
+  <div class="countdown" id="countdown">
+    <div class="count-box">
+      <span class="count-number">--</span>
+      <span class="count-label">Days</span>
+    </div>
+  </div>
+
+ 
+
+  <p class="small-note">
+    A celebration of love, faith and a lifetime together.
+  </p>
+</header>
+
+<section id="details">
+  <p class="section-label">Save the Date</p>
+  <h2>Our Special Day</h2>
+
+  <div class="card">
+    <h3>✝ Wedding Ceremony</h3>
+    <p id="ceremonyDetails">Church and ceremony time</p>
+
+    <div class="divider">❧</div>
+
+    <h3>♡ Wedding Reception</h3>
+    <p id="receptionDetails">Reception venue and time</p>
+  </div>
+</section>
+
+<section id="gallery">
+  <p class="section-label">Moments of Love</p>
+  <h2>Our Gallery</h2>
+  <p>Precious memories, a beautiful journey.</p>
+
+  <div class="gallery">
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR68k52-VMtTkFRiC2VbJtATLre3LeSliRVpUgjk1ywgA&s=10"
+      alt="Wedding memory one">
+
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2zDvDsxRiv4Gg61J6DEYfBEEzSLSUlkkiouwSXmpZTQ&s=10"
+      alt="Wedding memory two">
+
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcLkie3zBQxCdSAQZHstY-YwitgIsv5bLEbH3cedodtA&s=10"
+      alt="Wedding memory three">
+
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMeFNpoJjC16dlqJcu23iNRNYHF5NJN1p4r6ZrlEM4gqPiVOb6bfZQPEA&s=10"
+      alt="Wedding memory four">
+  </div>
+
+  <p class="small-note">
+   
+  </p>
+</section>
+
+<section id="venue">
+  <p class="section-label">Join Our Celebration</p>
+  <h2>Find Our Venue</h2>
+
+  <div class="card">
+    <div class="venue-icon">⛪</div>
+
+    <h3 id="venueName">Church Name</h3>
+    <p id="venueAddress">Wedding venue address</p>
+
+    <a
+      id="mapLink"
+      class="button"
+      href="https://maps.google.com"
+      target="_blank"
+      rel="noopener noreferrer">
+      Get Google Maps Directions
+    </a>
+
+    <p>Scan to find our wedding venue</p>
+    <img id="venueQR" alt="QR code for venue directions">
+
+    <p class="small-note">
+      The QR code opens the venue location in Google Maps.
+    </p>
+  </div>
+</section>
+
+<section id="rsvp">
+  <p class="section-label">We Hope You Can Join Us</p>
+  <h2>Kindly RSVP</h2>
+
+  <div class="card">
+    <p>Your presence will make our day more special.</p>
+
+    <form id="rsvpForm">
+      <input
+        id="guestName"
+        type="text"
+        placeholder="Your full name"
+        required>
+
+      <input
+        id="guestCount"
+        type="number"
+        min="1"
+        max="20"
+        value="1"
+        placeholder="Number of guests"
+        required>
+
+      <select id="attendance">
+        <option value="Joyfully accepts">
+          Joyfully accepts
+        </option>
+        <option value="Regretfully declines">
+          Regretfully declines
+        </option>
+      </select>
+
+      <textarea
+        id="message"
+        placeholder="Send your wishes (optional)"></textarea>
+
+      <button type="submit">Send RSVP on WhatsApp</button>
+    </form>
+
+    <p class="small-note">
+      Your response will be prepared in WhatsApp for you to send.
+    </p>
+  </div>
+</section>
+
+<section>
+  <p class="section-label">Spread the Happiness</p>
+  <h2>Share Our Invitation</h2>
+  <button onclick="shareWedding()">Share with Friends & Family</button>
+</section>
+
+<footer>
+  <div style="font-size:30px">✝ ♡</div>
+  <p>Two hearts, one faith, one beautiful journey.</p>
+  <p id="footerNames">Bride Name & Groom Name</p>
+  <p>With love and God's blessings.</p>
+</footer>
+
+<audio id="backgroundMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+// =======================================
+// EDIT ALL YOUR WEDDING DETAILS HERE
+// =======================================
+
+const wedding = {
+  bride: "Navya",
+  groom: "Jerrin",
+
+  // Format: YYYY-MM-DDTHH:MM:SS
+  date: "2027-01-30T10:00:00",
+
+  ceremony: "ST JOSEPHS CHURCH AMBALLUR | 10:00 AM",
+  reception: "Reception Hall | 12:30 PM",
+
+  venue: "ST JOSEPHS CHURCH AMBALLUR",
+  address: "Your Full Venue Address",
+
+  // India country code is 91.
+  // Replace Xs with your WhatsApp number.
+  whatsapp: "91XXXXXXXXXX"
+};
+
+// =======================================
+// DISPLAY WEDDING DETAILS
+// =======================================
+
+document.getElementById("coupleNames").textContent =
+  wedding.bride + " & " + wedding.groom;
+
+document.getElementById("footerNames").textContent =
+  wedding.bride + " & " + wedding.groom;
+
+const weddingDate = new Date(wedding.date);
+
+document.getElementById("weddingDateText").textContent =
+  weddingDate.toLocaleDateString("en-IN", {
+    day: "numeric",
+    month: "long",
+    year: "numeric"
+  });
+
+document.getElementById("ceremonyDetails").textContent =
+  wedding.ceremony;
+
+document.getElementById("receptionDetails").textContent =
+  wedding.reception;
+
+document.getElementById("venueName").textContent =
+  wedding.venue;
+
+document.getElementById("venueAddress").textContent =
+  wedding.address;
+
+// Google Maps directions
+const mapURL =
+  "https://www.google.com/maps/search/?api=1&query=" +
+  encodeURIComponent(wedding.venue + " " + wedding.address);
+
+document.getElementById("mapLink").href = mapURL;
+
+// Venue QR code
+document.getElementById("venueQR").src =
+  "https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=" +
+  encodeURIComponent(mapURL);
+
+// =======================================
+// WEDDING COUNTDOWN
+// =======================================
+
+function updateCountdown() {
+  const difference = weddingDate.getTime() - Date.now();
+  const countdown = document.getElementById("countdown");
+
+  if (Number.isNaN(weddingDate.getTime())) {
+    countdown.textContent = "Please enter a valid wedding date.";
+    return;
+  }
+
+  if (difference <= 0) {
+    countdown.innerHTML =
+      "<h3>Our special day is here! ♡</h3>";
+    return;
+  }
+
+  const days = Math.floor(difference / 86400000);
+  const hours = Math.floor((difference % 86400000) / 3600000);
+  const minutes = Math.floor((difference % 3600000) / 60000);
+  const seconds = Math.floor((difference % 60000) / 1000);
+
+  countdown.innerHTML = `
+    <div class="count-box">
+      <span class="count-number">${days}</span>
+      <span class="count-label">Days</span>
+    </div>
+    <div class="count-box">
+      <span class="count-number">${hours}</span>
+      <span class="count-label">Hours</span>
+    </div>
+    <div class="count-box">
+      <span class="count-number">${minutes}</span>
+      <span class="count-label">Minutes</span>
+    </div>
+    <div class="count-box">
+      <span class="count-number">${seconds}</span>
+      <span class="count-label">Seconds</span>
+    </div>
+  `;
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// =======================================
+// BACKGROUND MUSIC
+// =======================================
+
+function playMusic() {
+  const music = document.getElementById("backgroundMusic");
+
+  music.play().catch(() => {
+    alert("Please add your music.mp3 file beside index.html.");
+  });
+}
+
+function pauseMusic() {
+  document.getElementById("backgroundMusic").pause();
+}
+
+// =======================================
+// WHATSAPP RSVP
+// =======================================
+
+document.getElementById("rsvpForm").addEventListener(
+  "submit",
+  function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("guestName").value;
+    const guests = document.getElementById("guestCount").value;
+    const attendance = document.getElementById("attendance").value;
+    const message = document.getElementById("message").value;
+
+    const text =
+      "Wedding RSVP for " + wedding.bride + " & " + wedding.groom +
+      "\nName: " + name +
+      "\nNumber of guests: " + guests +
+      "\nResponse: " + attendance +
+      "\nMessage: " + message;
+
+    window.open(
+      "https://wa.me/" + wedding.whatsapp +
+      "?text=" + encodeURIComponent(text),
+      "_blank"
+    );
+  }
+);
+
+// =======================================
+// SHARE WEDDING INVITATION
+// =======================================
+
+function shareWedding() {
+  const text =
+    "You are invited to the wedding of " +
+    wedding.bride + " & " + wedding.groom +
+    " on " + weddingDate.toLocaleDateString("en-IN") +
+    ". Venue: " + wedding.venue + ", " + wedding.address +
+    ". Directions: " + mapURL;
+
+  if (navigator.share) {
+    navigator.share({
+      title: "Wedding Invitation",
+      text: text,
+      url: window.location.href
+    }).catch(() => {});
+  } else {
+    window.open(
+      "https://wa.me/?text=" + encodeURIComponent(text),
+      "_blank"
+    );
+  }
+}
+</script>
+
+</body>
+</html>
